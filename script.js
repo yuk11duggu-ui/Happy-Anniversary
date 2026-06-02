@@ -55,3 +55,19 @@ function typeWriter() {
 }
 
 window.onload = typeWriter;
+
+document.getElementById("answer").innerHTML =
+
+`
+❤️ YAY ❤️
+
+Thank you for making
+every day beautiful.
+
+Here's to forever,
+more adventures,
+more memories,
+and endless love.
+
+HAPPY 1 YEAR BABYYYYYY ❤️
+`;
