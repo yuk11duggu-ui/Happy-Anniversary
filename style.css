@@ -18,12 +18,20 @@ body{
 ========================================== */
 
 .welcome-page{
+
     height:100vh;
 
-    background:linear-gradient(
-    135deg,
-    #ffdde1,
-    #ee9ca7);
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.25)
+    ),
+
+    url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     display:flex;
     justify-content:center;
@@ -37,40 +45,168 @@ body{
 }
 
 .container h1{
-    font-size:4rem;
-    color:white;
+
+    font-size:5.5rem;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+    90deg,
+    #fff,
+    #ffd700,
+    #ff69b4,
+    #ffffff);
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+    shimmer 5s infinite linear;
+
+    text-shadow:
+    0 0 30px rgba(255,255,255,0.6);
+
     margin-bottom:20px;
 }
 
+@keyframes shimmer{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
 .container p{
-    font-size:1.5rem;
+
+    font-size:2rem;
+
     color:white;
-    margin-bottom:30px;
+
+    font-weight:500;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.5);
+
+    margin-bottom:40px;
+
+    animation:
+    fadeGlow 3s infinite alternate;
+}
+
+@keyframes fadeGlow{
+
+    from{
+
+        text-shadow:
+        0 0 10px white;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 30px pink,
+        0 0 50px white;
+    }
 }
 
 .buttons button{
 
-    padding:15px 30px;
+    padding:18px 40px;
 
-    margin:10px;
+    margin:15px;
 
     border:none;
 
-    border-radius:40px;
+    border-radius:50px;
 
     background:white;
 
-    color:#ff4081;
+    color:#ff3366;
 
-    font-size:18px;
+    font-size:20px;
+
+    font-weight:bold;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.4s;
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,0.4);
 }
 
 .buttons button:hover{
-    transform:scale(1.1);
+
+    transform:
+    translateY(-5px)
+    scale(1.08);
+
+    box-shadow:
+    0 15px 40px rgba(255,255,255,0.8);
+}
+
+.sparkles span{
+
+    position:absolute;
+
+    font-size:25px;
+
+    animation:
+    sparkle 4s infinite alternate;
+}
+
+.sparkles span:nth-child(1){
+top:15%;
+left:10%;
+}
+
+.sparkles span:nth-child(2){
+top:20%;
+left:80%;
+}
+
+.sparkles span:nth-child(3){
+top:70%;
+left:15%;
+}
+
+.sparkles span:nth-child(4){
+top:60%;
+left:85%;
+}
+
+.sparkles span:nth-child(5){
+top:30%;
+left:50%;
+}
+
+.sparkles span:nth-child(6){
+top:80%;
+left:60%;
+}
+
+@keyframes sparkle{
+
+    from{
+
+        opacity:0.3;
+
+        transform:scale(1);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1.6);
+    }
 }
 
 /* ==========================================
