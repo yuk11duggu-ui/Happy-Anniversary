@@ -16,3 +16,44 @@ window.onload = () => {
     },1000);
 
 };
+
+const message = `
+
+My Love ❤️
+
+Thank you for being the most beautiful
+part of my life.
+
+Thank you for every smile,
+every late-night conversation,
+every hug,
+every moment of support,
+and every memory we've created together.
+
+Life feels brighter because you're in it.
+
+No matter where life takes us,
+I promise to keep choosing you,
+every single day.
+
+Happy Anniversary ❤️
+
+`;
+
+let i = 0;
+
+function typeWriter() {
+
+    if(i < message.length){
+
+        document
+        .getElementById("typedText")
+        .innerHTML += message.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,40);
+    }
+}
+
+window.onload = typeWriter;
