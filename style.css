@@ -1,3 +1,7 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
 *{
     margin:0;
     padding:0;
@@ -5,23 +9,31 @@
 }
 
 body{
-    font-family: 'Segoe UI', sans-serif;
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
 }
 
-/* Welcome Page */
+/* ==========================================
+   WELCOME PAGE
+========================================== */
 
 .welcome-page{
     height:100vh;
+
     background:linear-gradient(
-        135deg,
-        #ffdde1,
-        #ee9ca7
-    );
+    135deg,
+    #ffdde1,
+    #ee9ca7);
 
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+}
+
+.container{
+    z-index:10;
 }
 
 .container h1{
@@ -37,14 +49,23 @@ body{
 }
 
 .buttons button{
+
     padding:15px 30px;
+
     margin:10px;
+
     border:none;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
+
+    border-radius:40px;
+
     background:white;
+
     color:#ff4081;
+
+    font-size:18px;
+
+    cursor:pointer;
+
     transition:.3s;
 }
 
@@ -52,220 +73,22 @@ body{
     transform:scale(1.1);
 }
 
-/* Story Page */
-
-.story-page{
-    background:#f7f0dc;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
-}
-
-.diary{
-    background:#fffef7;
-    width:80%;
-    max-width:700px;
-    padding:40px;
-    border-radius:10px;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
-    line-height:2;
-    font-size:18px;
-}
-
-.diary h1{
-    margin-bottom:20px;
-    text-align:center;
-}
-
-.diary button{
-    margin-top:30px;
-    padding:15px 25px;
-    border:none;
-    border-radius:30px;
-    background:#ff4081;
-    color:white;
-    cursor:pointer;
-}
-
-/* Anniversary Page */
-
-.anniversary-page{
-    min-height:100vh;
-    background:url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1500&q=80');
-    background-size:cover;
-    background-position:center;
-}
-
-.overlay{
-    min-height:100vh;
-    background:rgba(0,0,0,0.4);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.collage{
-    width:80%;
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:15px;
-
-    margin-bottom:40px;
-}
-
-.collage img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:15px;
-    border:4px solid white;
-}
-
-#anniversaryText{
-    color:white;
-    font-size:5rem;
-    opacity:0;
-}
-
-/* Message Page */
-
-.message-page{
-    min-height:100vh;
-
-    background:url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1500&q=80');
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.flower-overlay{
-    min-height:100vh;
-    width:100%;
-
-    background:rgba(255,255,255,0.15);
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.heart-container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.heart{
-    position:relative;
-
-    width:350px;
-    height:350px;
-
-    background:#ff4d6d;
-
-    transform:rotate(-45deg);
-
-    animation:heartbeat 1.5s infinite;
-}
-
-.heart:before,
-.heart:after{
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-    height:350px;
-
-    background:#ff4d6d;
-
-    border-radius:50%;
-}
-
-.heart:before{
-    top:-175px;
-}
-
-.heart:after{
-    left:175px;
-}
-
-.heart-text{
-
-    position:absolute;
-
-    width:250px;
-
-    top:50%;
-    left:50%;
-
-    transform:
-    translate(-50%,-50%)
-    rotate(45deg);
-
-    color:white;
-
-    text-align:center;
-
-    font-size:16px;
-
-    z-index:10;
-
-    line-height:1.6;
-}
-
-.next-btn{
-    margin-top:80px;
-
-    padding:15px 30px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:white;
-
-    color:#ff4d6d;
-
-    font-size:18px;
-
-    cursor:pointer;
-}
-
-@keyframes heartbeat{
-
-    0%{
-        transform:rotate(-45deg) scale(1);
-    }
-
-    50%{
-        transform:rotate(-45deg) scale(1.05);
-    }
-
-    100%{
-        transform:rotate(-45deg) scale(1);
-    }
-}
+/* ==========================================
+   FALLING HEARTS
+========================================== */
 
 .hearts{
+
     position:fixed;
+
     width:100%;
     height:100%;
+
     top:0;
     left:0;
+
     overflow:hidden;
+
     pointer-events:none;
 }
 
@@ -273,13 +96,11 @@ body{
 
     position:absolute;
 
-    display:block;
+    top:-100px;
 
     font-size:30px;
 
     animation:fall 12s linear infinite;
-
-    top:-100px;
 }
 
 .hearts span:nth-child(1){left:10%;animation-delay:0s;}
@@ -295,22 +116,66 @@ body{
 
 @keyframes fall{
 
-    0%{
+    from{
         transform:
         translateY(-100px)
         rotate(0deg);
     }
 
-    100%{
+    to{
         transform:
         translateY(110vh)
         rotate(360deg);
     }
 }
 
-.continue-btn{
+/* ==========================================
+   STORY PAGE
+========================================== */
 
-    margin-top:40px;
+.story-page{
+
+    min-height:100vh;
+
+    background:#f7f0dc;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+}
+
+.diary{
+
+    width:80%;
+
+    max-width:800px;
+
+    background:#fffef7;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.2);
+
+    line-height:2;
+
+    font-size:18px;
+}
+
+.diary h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.diary button{
+
+    margin-top:30px;
 
     padding:15px 30px;
 
@@ -318,38 +183,419 @@ body{
 
     border-radius:40px;
 
-    font-size:20px;
+    background:#ff4081;
 
-    background:white;
-
-    color:#ff4081;
+    color:white;
 
     cursor:pointer;
 }
 
-.forever-page{
+/* ==========================================
+   MESSAGE PAGE
+========================================== */
 
-    height:100vh;
+.message-page{
 
-    background:linear-gradient(
+    min-height:100vh;
+
+    background:
+    linear-gradient(
     135deg,
-    #ff9a9e,
-    #fad0c4);
+    #ff758c,
+    #ff7eb3,
+    #ffc3a0);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.flower-overlay{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+}
+
+/* ==========================================
+   GIANT HEART
+========================================== */
+
+.heart{
+
+    position:relative;
+
+    width:550px;
+    height:550px;
+
+    background:#ff3366;
+
+    transform:rotate(-45deg);
+
+    animation:
+    heartbeat 1.5s infinite,
+    glow 3s infinite;
+
+    z-index:10;
+}
+
+.heart:before,
+.heart:after{
+
+    content:"";
+
+    position:absolute;
+
+    width:550px;
+    height:550px;
+
+    background:#ff3366;
+
+    border-radius:50%;
+}
+
+.heart:before{
+    top:-275px;
+}
+
+.heart:after{
+    left:275px;
+}
+
+.heart-text{
+
+    position:absolute;
+
+    width:380px;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%)
+    rotate(45deg);
+
+    color:white;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    text-align:center;
+
+    z-index:999;
+}
+
+@keyframes heartbeat{
+
+    0%{
+        transform:
+        rotate(-45deg)
+        scale(1);
+    }
+
+    50%{
+        transform:
+        rotate(-45deg)
+        scale(1.05);
+    }
+
+    100%{
+        transform:
+        rotate(-45deg)
+        scale(1);
+    }
+}
+
+@keyframes glow{
+
+    0%{
+        box-shadow:
+        0 0 40px #ff4d6d;
+    }
+
+    50%{
+        box-shadow:
+        0 0 120px #ff99aa;
+    }
+
+    100%{
+        box-shadow:
+        0 0 40px #ff4d6d;
+    }
+}
+
+/* ==========================================
+   CONFETTI
+========================================== */
+
+.confetti-container{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.confetti{
+
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    animation:
+    confettiFall 10s linear infinite;
+}
+
+@keyframes confettiFall{
+
+    from{
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+    }
+}
+
+/* ==========================================
+   FLOWER PETALS
+========================================== */
+
+.petals span{
+
+    position:absolute;
+
+    top:-100px;
+
+    font-size:35px;
+
+    animation:
+    petalFall 12s linear infinite;
+}
+
+@keyframes petalFall{
+
+    from{
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+    }
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.next-btn,
+.continue-btn{
+
+    display:block;
+
+    margin:40px auto 0 auto;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#ff3366;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    z-index:20;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+.next-btn:hover,
+.continue-btn:hover{
+
+    transform:scale(1.1);
+
+    box-shadow:
+    0 10px 25px rgba(255,255,255,0.5);
+}
+
+/* ==========================================
+   ANNIVERSARY PAGE
+========================================== */
+
+.anniversary-page{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff6b81,
+    #ff8fa3,
+    #ffc2d1);
 
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-.forever-container{
+.overlay{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
     text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.collage{
+
+    width:85vw;
+
+    max-width:1100px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:40px;
+}
+
+.collage img{
+
+    width:100%;
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    border:4px solid white;
+
+    transition:.4s;
+}
+
+.collage img:hover{
+
+    transform:scale(1.05);
+}
+
+#anniversaryText{
+
+    color:white;
+
+    font-size:6rem;
+
+    font-weight:bold;
+
+    text-shadow:
+
+    0 0 20px white,
+    0 0 40px pink,
+    0 0 80px red;
+
+    animation:
+    glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+
+    from{
+
+        text-shadow:
+        0 0 20px white;
+    }
+
+    to{
+
+        text-shadow:
+        0 0 60px pink,
+        0 0 100px red;
+    }
+}
+
+/* ==========================================
+   FOREVER PAGE
+========================================== */
+
+.forever-page{
+
+    height:100vh;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9a9e,
+    #fad0c4);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.forever-container{
+
     color:white;
 }
 
 .forever-container h1{
 
     font-size:3rem;
+
     margin-bottom:30px;
 }
 
@@ -361,11 +607,11 @@ body{
 
     border-radius:50px;
 
-    font-size:24px;
-
     background:white;
 
     color:#ff4081;
+
+    font-size:24px;
 
     cursor:pointer;
 
@@ -379,7 +625,136 @@ body{
 
 #answer{
 
-    margin-top:40px;
+    margin-top:30px;
 
     font-size:2rem;
 }
+
+.polaroid-gallery{
+
+    position:relative;
+
+    width:100%;
+
+    height:600px;
+
+    margin-bottom:60px;
+}
+
+.polaroid{
+
+    position:absolute;
+
+    width:220px;
+
+    background:white;
+
+    padding:12px 12px 40px;
+
+    border-radius:5px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.3);
+
+    animation:
+    floatPhoto 4s ease-in-out infinite;
+}
+
+.polaroid img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+}
+
+.p1{
+    left:5%;
+    top:20%;
+    transform:rotate(-12deg);
+}
+
+.p2{
+    left:25%;
+    top:5%;
+    transform:rotate(8deg);
+}
+
+.p3{
+    left:45%;
+    top:18%;
+    transform:rotate(-5deg);
+}
+
+.p4{
+    left:65%;
+    top:10%;
+    transform:rotate(10deg);
+}
+
+.p5{
+    left:20%;
+    top:55%;
+    transform:rotate(6deg);
+}
+
+.p6{
+    left:55%;
+    top:55%;
+    transform:rotate(-8deg);
+}
+
+@keyframes floatPhoto{
+
+    0%{
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        translateY(-15px);
+    }
+
+    100%{
+        transform:
+        translateY(0px);
+    }
+}
+
+#typedText{
+
+    white-space:pre-line;
+}
+
+#typedText::after{
+
+    content:"|";
+
+    animation:
+    blink .7s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+}
+
+#fireworks{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
