@@ -6,6 +6,8 @@
 </head>
 <body class="anniversary-page">
 
+    <canvas id="fireworks"></canvas>
+
 <div class="overlay">
 
     <div class="polaroid-gallery">
@@ -53,3 +55,96 @@
 
 </body>
 </html>
+
+
+<script>
+
+const canvas =
+document.getElementById("fireworks");
+
+const ctx =
+canvas.getContext("2d");
+
+canvas.width =
+window.innerWidth;
+
+canvas.height =
+window.innerHeight;
+
+function random(min,max){
+    return Math.random()*(max-min)+min;
+}
+
+let particles=[];
+
+function createFirework(){
+
+    const x =
+    random(100,window.innerWidth-100);
+
+    const y =
+    random(50,window.innerHeight/2);
+
+    for(let i=0;i<60;i++){
+
+        particles.push({
+
+            x:x,
+            y:y,
+
+            dx:
+            random(-4,4),
+
+            dy:
+            random(-4,4),
+
+            life:100
+        });
+    }
+}
+
+function animate(){
+
+    ctx.clearRect(
+    0,0,
+    canvas.width,
+    canvas.height);
+
+    particles.forEach((p,index)=>{
+
+        p.x+=p.dx;
+        p.y+=p.dy;
+
+        p.life--;
+
+        ctx.beginPath();
+
+        ctx.arc(
+        p.x,
+        p.y,
+        3,
+        0,
+        Math.PI*2);
+
+        ctx.fillStyle=
+        `hsl(${p.life*3},100%,60%)`;
+
+        ctx.fill();
+
+        if(p.life<=0){
+
+            particles.splice(index,1);
+        }
+    });
+
+    requestAnimationFrame(
+    animate);
+}
+
+setInterval(
+createFirework,
+1000);
+
+animate();
+
+</script>
