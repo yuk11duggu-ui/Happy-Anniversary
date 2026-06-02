@@ -56,18 +56,27 @@ function typeWriter() {
 
 window.onload = typeWriter;
 
-document.getElementById("answer").innerHTML =
+document
+.getElementById("yesBtn")
+.addEventListener("click",function(){
+
+document
+.getElementById("answer")
+.innerHTML =
 
 `
 ❤️ YAY ❤️
 
-Thank you for making
-every day beautiful.
+Thank you for being my favourite
+chapter, my favourite memory,
+and my favourite person.
 
 Here's to forever,
 more adventures,
-more memories,
+more laughter,
 and endless love.
 
-HAPPY 1 YEAR BABYYYYYY ❤️
+Happy Anniversary My Love ❤️
 `;
+
+});
