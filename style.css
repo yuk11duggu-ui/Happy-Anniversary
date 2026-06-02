@@ -710,17 +710,25 @@ left:60%;
 
     background:
     linear-gradient(
-    135deg,
-    #ff9a9e,
-    #fad0c4);
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.25)
+    ),
+
+    url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     text-align:center;
+
+    overflow:hidden;
+
+    position:relative;
 }
 
 .forever-container{
@@ -730,14 +738,35 @@ left:60%;
 
 .forever-container h1{
 
-    font-size:3rem;
+    font-size:4.5rem;
 
-    margin-bottom:30px;
+    font-weight:800;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffffff,
+    #ffd700,
+    #ff69b4,
+    #ffffff);
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+    shimmer 5s infinite linear;
+
+    text-shadow:
+    0 0 30px rgba(255,255,255,0.7);
+
+    margin-bottom:40px;
 }
 
 #yesBtn{
 
-    padding:20px 40px;
+    padding:18px 45px;
 
     border:none;
 
@@ -745,25 +774,48 @@ left:60%;
 
     background:white;
 
-    color:#ff4081;
+    color:#ff3366;
 
     font-size:24px;
 
+    font-weight:bold;
+
     cursor:pointer;
 
-    transition:.3s;
+    transition:0.4s;
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,0.5);
 }
 
 #yesBtn:hover{
 
-    transform:scale(1.1);
+    transform:
+    translateY(-5px)
+    scale(1.1);
+
+    box-shadow:
+    0 15px 40px rgba(255,255,255,0.9);
 }
 
 #answer{
 
-    margin-top:30px;
+    margin-top:40px;
 
     font-size:2rem;
+
+    color:white;
+
+    font-weight:600;
+
+    text-shadow:
+
+    0 0 10px white,
+    0 0 20px pink,
+    0 0 40px #ff69b4;
+
+    animation:
+    fadeIn 2s ease;
 }
 
 .polaroid-gallery{
