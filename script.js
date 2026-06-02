@@ -19,24 +19,22 @@ window.onload = () => {
 
 const message = `
 
-My Love ❤️
+My Baby ❤️
 
-Thank you for being the most beautiful
-part of my life.
+                    Thank you for being the most beautiful
+                    part of my life.
 
-Thank you for every smile,
-every late-night conversation,
-every hug,
-every moment of support,
-and every memory we've created together.
+                    You have made my life filled with happiness.
+                    Tu Jugnu Chamakta, Main Jungle ghanera 
+                    Main Tera Main Tera Main Tera
+                  
+                    Life feels brighter because you're in it.
 
-Life feels brighter because you're in it.
+                    No matter where life takes us,
+                    I promise to keep choosing you,
+                    every single day.
 
-No matter where life takes us,
-I promise to keep choosing you,
-every single day.
-
-Happy Anniversary ❤️
+                    Happy First Anniversary ❤️
 
 `;
 
